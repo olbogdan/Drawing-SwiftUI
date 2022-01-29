@@ -9,13 +9,25 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ZStack {
+            Color.yellow
+                .edgesIgnoringSafeArea(.all)
+            Image("cat")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .clipShape(Circle())
+                .frame(width: 250)
+                .overlay(Circle()
+                            .inset(by: 5)
+                            .stroke(lineWidth: 10))
+                
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+.previewInterfaceOrientation(.landscapeLeft)
     }
 }
