@@ -9,15 +9,53 @@ import SwiftUI
 
 struct DrawShape: View {
     var body: some View {
-        let strokeStyle = StrokeStyle(lineWidth: 10, lineCap: .round, lineJoin: .round)
-        HStack {
-            Chevron()
-            .stroke(style: strokeStyle)
-            Heart()
-                .stroke(style: strokeStyle)
-            Diamond()
-                .stroke(style: strokeStyle)
+        let style = StrokeStyle(lineWidth: 5, lineCap: .round)
+        return List {
+            ForEach(Shapes.allCases, id: \.self) { shape in
+                shape
+                    .shape
+                    .stroke(style: style)
+                    .frame(height: 150)
+                    .padding()
+            }
         }
+    }
+}
+
+enum Shapes: CaseIterable {
+    case diamond
+    case chevron
+    case heart
+    
+    var shape: some Shape {
+        switch self {
+        case .diamond:
+            return Diamond().anyShape()
+        case .chevron:
+            return Chevron().anyShape()
+        case .heart:
+            return Heart().anyShape()
+        }
+    }
+}
+
+extension Shape {
+    func anyShape() -> AnyShape {
+        return AnyShape(self)
+    }
+}
+
+struct AnyShape: Shape {
+    private let path: (CGRect) -> Path
+    
+    init<T: Shape>(_ shape: T) {
+        path = { rect in
+            return shape.path(in: rect)
+        }
+    }
+    
+    func path(in rect: CGRect) -> Path {
+        return path(rect)
     }
 }
 
@@ -76,6 +114,6 @@ struct Chevron: Shape {
 struct DrawShape_Previews: PreviewProvider {
     static var previews: some View {
         DrawShape()
-            .previewInterfaceOrientation(.landscapeLeft)
+            .previewInterfaceOrientation(.portraitUpsideDown)
     }
 }
