@@ -8,10 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    var gradient: Gradient {
+        let stops: [Gradient.Stop] = [
+            .init(color: Color("pink"), location: 0.45),
+            .init(color: .blue, location: 0.55)]
+        return Gradient(stops: stops)
+    }
+    
     var body: some View {
         ZStack {
-            Color.yellow
-                .edgesIgnoringSafeArea(.all)
+            LinearGradient(gradient: gradient, startPoint: .top, endPoint: .bottom)
+                .ignoresSafeArea()
             Image("cat")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
@@ -19,15 +26,22 @@ struct ContentView: View {
                 .frame(width: 250)
                 .overlay(Circle()
                             .inset(by: 5)
-                            .stroke(lineWidth: 10))
-                
+                            .stroke(lineWidth: 10)
+                            .foregroundColor(.green))
+            
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
-.previewInterfaceOrientation(.landscapeLeft)
+        Group {
+            ContentView()
+                .previewInterfaceOrientation(.landscapeLeft)
+                .colorScheme(.dark)
+            ContentView()
+                .previewInterfaceOrientation(.landscapeLeft)
+                .colorScheme(.light)
+        }
     }
 }
