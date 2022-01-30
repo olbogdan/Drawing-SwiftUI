@@ -11,7 +11,7 @@ import SwiftUI
 struct Drawing_SwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Avatar()
         }
     }
 }

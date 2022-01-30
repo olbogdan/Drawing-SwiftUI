@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  Avatar.swift
 //  Drawing SwiftUI
 //
 //  Created by Oleksandr Bogdanov on 30.01.22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct Avatar: View {
     var gradient: Gradient {
         let stops: [Gradient.Stop] = [
             .init(color: Color("pink"), location: 0.45),
@@ -36,10 +36,10 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ContentView()
+            Avatar()
                 .previewInterfaceOrientation(.landscapeLeft)
                 .colorScheme(.dark)
-            ContentView()
+            Avatar()
                 .previewInterfaceOrientation(.landscapeLeft)
                 .colorScheme(.light)
         }
