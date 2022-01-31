@@ -13,7 +13,7 @@ struct Drawing_SwiftUIApp: App {
     
     var body: some Scene {
         WindowGroup {
-            TestSliderView()
+            FlyoutMenuView()
         }
     }
 }
