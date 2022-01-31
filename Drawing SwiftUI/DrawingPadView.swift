@@ -7,15 +7,15 @@
 
 import SwiftUI
 
-struct DrawingPad: View {
-    @State private var strokeColor: Color = .black
+struct DrawingPadView: View {
+    @Binding var strokeColor: PickedColor
     @State private var drawingPath = DrawingPath()
     @State private var path: [DrawingPath] = []
     
     var body: some View {
         let drag = DragGesture(minimumDistance: 0)
             .onChanged { stroke in
-                drawingPath.addLine(to: stroke.location, color: strokeColor)
+                drawingPath.addLine(to: stroke.location, color: strokeColor.color)
             }
             .onEnded { stroke in
                 if !drawingPath.path.isEmpty {
@@ -25,7 +25,7 @@ struct DrawingPad: View {
                 drawingPath = DrawingPath()
             }
         return ZStack {
-            Color("Yellow")
+            Color.white
                 .ignoresSafeArea()
                 .gesture(drag)
             ForEach(path) { drawingPath in
@@ -37,7 +37,6 @@ struct DrawingPad: View {
                 .stroke(lineWidth: 14)
                 .foregroundColor(drawingPath.color)
         }
-        
     }
 }
 
@@ -66,7 +65,7 @@ struct DrawingPath: Identifiable {
 
 struct DrawingPad_Previews: PreviewProvider {
     static var previews: some View {
-        DrawingPad()
+        DrawingPadView(strokeColor: .constant(PickedColor.black))
     }
 }
 

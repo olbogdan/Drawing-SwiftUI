@@ -8,13 +8,10 @@
 import SwiftUI
 
 struct ColorPickerView: View {
-    @State fileprivate var mainColor: PickedColor = PickedColor.black
+    @Binding var mainColor: PickedColor
     
     var body: some View {
         VStack {
-            Circle()
-                .foregroundColor(mainColor.color)
-                .frame(width: 300)
             HStack(alignment: .center) {
                 ForEach(PickedColor.allCases, id: \.self) { pickedColor in
                     CirclePicker(mainColor: $mainColor, pickedColor: pickedColor)
@@ -26,7 +23,7 @@ struct ColorPickerView: View {
 
 struct ColorPickerView_Previews: PreviewProvider {
     static var previews: some View {
-        ColorPickerView()
+        ColorPickerView(mainColor: .constant(PickedColor.black))
     }
 }
 
@@ -52,7 +49,7 @@ private struct CirclePicker : View {
     }
 }
 
-private enum PickedColor: CaseIterable {
+enum PickedColor: CaseIterable {
     case black, blue, green, orange, red, yellow
     
     var color: Color {
