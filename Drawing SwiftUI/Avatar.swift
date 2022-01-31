@@ -10,8 +10,8 @@ import SwiftUI
 struct Avatar: View {
     var gradient: Gradient {
         let stops: [Gradient.Stop] = [
-            .init(color: Color("pink"), location: 0.45),
-            .init(color: .blue, location: 0.55)]
+            .init(color: .blue, location: 0.45),
+            .init(color: Color("Yellow"), location: 0.55)]
         return Gradient(stops: stops)
     }
     
