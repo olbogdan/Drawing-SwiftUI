@@ -50,6 +50,7 @@ struct FlyoutMenuView: View {
         }
         .offset(offset)
         .frame(width: iconDiameter)
+        .scaleEffect(isOpen ? 1.0 : 0.00)
     }
 }
 
