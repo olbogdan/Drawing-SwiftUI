@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		687E353B27A727F20009887E /* ColorSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687E353A27A727F20009887E /* ColorSliderView.swift */; };
+		687E353D27A804750009887E /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687E353C27A804750009887E /* ColorPickerView.swift */; };
 		68C8616827A6031000445B72 /* Drawing_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C8616727A6031000445B72 /* Drawing_SwiftUIApp.swift */; };
 		68C8616A27A6031000445B72 /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C8616927A6031000445B72 /* Avatar.swift */; };
 		68C8616C27A6031100445B72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68C8616B27A6031100445B72 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		687E353A27A727F20009887E /* ColorSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSliderView.swift; sourceTree = "<group>"; };
+		687E353C27A804750009887E /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
 		68C8616427A6031000445B72 /* Drawing SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Drawing SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		68C8616727A6031000445B72 /* Drawing_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawing_SwiftUIApp.swift; sourceTree = "<group>"; };
 		68C8616927A6031000445B72 /* Avatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				68C8616927A6031000445B72 /* Avatar.swift */,
 				68C8617727A6C04E00445B72 /* DrawShape.swift */,
 				687E353A27A727F20009887E /* ColorSliderView.swift */,
+				687E353C27A804750009887E /* ColorPickerView.swift */,
 				68C8616B27A6031100445B72 /* Assets.xcassets */,
 				68C8617527A6106800445B72 /* Colors.xcassets */,
 				68C8616D27A6031100445B72 /* Preview Content */,
@@ -151,6 +154,7 @@
 				687E353B27A727F20009887E /* ColorSliderView.swift in Sources */,
 				68C8616A27A6031000445B72 /* Avatar.swift in Sources */,
 				68C8616827A6031000445B72 /* Drawing_SwiftUIApp.swift in Sources */,
+				687E353D27A804750009887E /* ColorPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
